@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <effect>
+      <ColorAdjust brightness="-0.13" contrast="0.04" saturation="-0.13" />
+   </effect>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <Button id="compress" fx:id="compress" contentDisplay="CENTER" disable="true" layoutX="24.0" layoutY="341.0" mnemonicParsing="false" onAction="#Compress" prefHeight="34.0" prefWidth="551.0" style="-fx-background-color: #1665aa;" text="Compress" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button id="decompress" fx:id="decompress" contentDisplay="CENTER" disable="true" layoutX="24.0" layoutY="388.0" mnemonicParsing="false" onAction="#Decompress" prefHeight="34.0" prefWidth="551.0" style="-fx-background-color: #1665aa;" text="Decompress" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button id="clear" fx:id="clear" layoutX="462.0" layoutY="294.0" mnemonicParsing="false" onAction="#clear" prefHeight="34.0" prefWidth="113.0" text="Clear">
+         <font>
+            <Font name="Cambria" size="16.0" />
+         </font>
+      </Button>
+      <Button id="files" fx:id="files" layoutX="24.0" layoutY="294.0" mnemonicParsing="false" onAction="#Files" prefHeight="34.0" prefWidth="386.0" text="Read input from file">
+         <font>
+            <Font name="Cambria" size="16.0" />
+         </font>
+      </Button>
+      <Button id="addChar" fx:id="addChar" disable="true" layoutX="544.0" layoutY="90.0" mnemonicParsing="false" onAction="#addChar" text="+">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextField id="inputText" fx:id="inputText" layoutX="120.0" layoutY="35.0" onKeyReleased="#enableCompress" prefHeight="32.0" prefWidth="456.0" promptText="Enter your text" style="-fx-background-color: #ffffff; -fx-border-color: #1665aa; -fx-border-width: 2;">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </TextField>
+      <Label id="label1" layoutX="28.0" layoutY="36.0" prefHeight="30.0" prefWidth="76.0" text="Input text:">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label id="label2" layoutX="28.0" layoutY="90.0" prefHeight="30.0" prefWidth="83.0" text="Character:">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label id="label3" layoutX="289.0" layoutY="90.0" prefHeight="30.0" prefWidth="97.0" text="Probability:">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label id="label1" layoutX="25.0" layoutY="190.0" prefHeight="30.0" prefWidth="83.0" text="Output text:">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="outputText" fx:id="outputText" layoutX="120.0" layoutY="189.0" prefHeight="32.0" prefWidth="456.0" style="-fx-background-color: #ffffff; -fx-border-color: #1665aa; -fx-border-width: 2;">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </TextField>
+      <TextField id="character" fx:id="character" layoutX="119.0" layoutY="89.0" onKeyReleased="#enableAdd" prefHeight="32.0" prefWidth="155.0" promptText="Enter a character" style="-fx-background-color: #ffffff; -fx-border-color: #1665aa; -fx-border-width: 2;">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </TextField>
+      <TextField id="probability" fx:id="probability" layoutX="380.0" layoutY="89.0" onKeyReleased="#enableAdd" prefHeight="32.0" prefWidth="155.0" promptText="Enter its probability" style="-fx-background-color: #ffffff; -fx-border-color: #1665aa; -fx-border-width: 2;">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </TextField>
+      <Label id="label5" layoutX="26.0" layoutY="142.0" prefHeight="30.0" prefWidth="83.0" text="Length:">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="length" fx:id="length" layoutX="120.0" layoutY="140.0" onKeyReleased="#enableDecompress" prefHeight="32.0" prefWidth="456.0" promptText="Enter the length of the string" style="-fx-background-color: #ffffff; -fx-border-color: #1665aa; -fx-border-width: 2;">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </TextField>
+      <Label id="label6" fx:id="labelIn" layoutX="26.0" layoutY="241.0" prefHeight="30.0" prefWidth="83.0" text="Input file:" visible="false">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label id="label6" fx:id="labelOut" layoutX="296.0" layoutY="241.0" prefHeight="30.0" prefWidth="83.0" text="Output file:" visible="false">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="inputFile" fx:id="inputFile" layoutX="120.0" layoutY="240.0" onKeyReleased="#enableAdd" prefHeight="32.0" prefWidth="162.0" promptText="Enter input file name" style="-fx-background-color: #ffffff; -fx-border-color: #1665aa; -fx-border-width: 2;" visible="false">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </TextField>
+      <TextField id="outputFile" fx:id="outputFile" layoutX="402.0" layoutY="240.0" onKeyReleased="#enableAdd" prefHeight="32.0" prefWidth="173.0" promptText="Enter output file name" style="-fx-background-color: #ffffff; -fx-border-color: #1665aa; -fx-border-width: 2;" visible="false">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </TextField>
+   </children>
+</Pane>
